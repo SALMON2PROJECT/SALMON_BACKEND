@@ -7,39 +7,47 @@
         <auth-method>FORM</auth-method>
         <form-login-config>
             <form-login-page>//localhost:3000/Login</form-login-page>
-            <form-error-page>//localhost:3000/Login</form-error-page>
+            <form-error-page>//localhost:3000/error</form-error-page>
         </form-login-config>
     </login-config>
 
     <error-page>
         <error-code>404</error-code>
-<location>//localhost:3000/Login</location>
+<location>//localhost:3000/error</location>
     </error-page>
     <error-page>
         <error-code>403</error-code>
-        <location>//localhost:3000/Login</location>
+        <location>//localhost:3000/error</location>
     </error-page>
 
     <!--Security Constraint-->
-    <!--<security-constraint>-->
-        <!--<web-resource-collection>-->
-            <!--<web-resource-name>adminRealm</web-resource-name>-->
-            <!--<url-pattern>//localhost:3000/admin</url-pattern>-->
-        <!--</web-resource-collection>-->
-        <!--<auth-constraint>-->
-            <!--<role-name>admin</role-name>-->
-        <!--</auth-constraint>-->
-    <!--</security-constraint>-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>adminRealm</web-resource-name>
+            <url-pattern>//localhost:3000/admin</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
 
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>usersRealm</web-resource-name>
-            <url-pattern>//localhost:3000/pdfAnnotatorController</url-pattern>
+            <url-pattern>//localhost:3000/user</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>user</role-name>
         </auth-constraint>
     </security-constraint>
+    <!--<filter>-->
+        <!--<filter-name>hiddenHttpMethodFilter</filter-name>-->
+        <!--<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>hiddenHttpMethodFilter</filter-name>-->
+        <!--<url-pattern>/*</url-pattern>-->
+    <!--</filter-mapping>-->
     <!--<security-constraint>-->
         <!--<web-resource-collection>-->
             <!--<web-resource-name>test</web-resource-name>-->
@@ -73,9 +81,9 @@
     </servlet-mapping>
     <!--Spring-->
     <!--Security Constraint-->
-    <!--<security-role>-->
-        <!--<role-name>admin</role-name>-->
-    <!--</security-role>-->
+    <security-role>
+        <role-name>admin</role-name>
+    </security-role>
 
     <security-role>
         <role-name>user</role-name>

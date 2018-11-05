@@ -8,9 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
-/**
- * Created by Aprin on 10/16/2018.
- */
+
 @Service
 @Transactional
 public abstract class MainService<T> {
@@ -29,7 +27,9 @@ public abstract class MainService<T> {
     public List<T> getAll(Class<T> aclass){
 
         try {
-            return entityManager.createQuery("select entity from"+aclass.newInstance().getClass().getAnnotation(Entity.class).name()+"entity").getResultList();
+            List tList=entityManager.createQuery("select entity from"+aclass.newInstance().getClass().getAnnotation(Entity.class).name()+"entity")
+                    .getResultList();
+            return tList;
         }catch (Exception e){
             e.printStackTrace();
             return null;

@@ -1,107 +1,81 @@
 package com.salmon.controller;
 
-import com.google.gson.Gson;
+
 import com.salmon.TO.Roles;
 import com.salmon.TO.Users;
 import com.salmon.repository.UserService;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.catalina.realm.GenericPrincipal;
+import org.springframework.beans.factory.annotation.Autowired;// selvlet stage
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 
 @Controller
 @RequestMapping(value = "/user")
 public class controller {
 
-    @Autowired
+    @Autowired // put userservise (obj) to to spring container
     private UserService userService;
 
-    @RequestMapping(value = "/userRegister",method = RequestMethod.POST)
-    public String userReg(@RequestBody String string) throws IOException {
+    @RequestMapping(value = "/userRegister") //conect two request together // POST is form from JSON BASE from axios
+    public void userReg(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{ //REquest body : get the data from front as string
 
-        System.out.println("i am here");
+        /*System.out.println("i am here");
         System.out.println(string);
-        Gson gson=new Gson();
-        Users users=gson.fromJson(string,Users.class);
-
-        Roles roles=new Roles();
+        Gson gson=new Gson();*/
+        String username=request.getParameter("username");
+        String userpass=request.getParameter("userpass");
+        Users users=new Users();
+        users.setUsername(username);
+        users.setUserpass(userpass);
+        Roles roles=new Roles();// TO folder
         roles.setRoleName("user");
         roles.setUsername(users.getUsername());
-        userService.register(users);
-        userService.roleReg(roles);
-        System.out.println("done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        return "redirect:/user/userReg.do";
-
-    }
-    @RequestMapping(value = "/userReg",method = RequestMethod.GET)
-    public String regRedirect() {
-        System.out.println("i am here in response!!!!!!!!!!!!!!!!!!!");
-        return "redirect://localhost:3000/user";
-
-    }
-
-    @RequestMapping(value = "/adminRegister")
-    public String adminLogin()
-    {
-        Users users=new Users();
-        users.setUsername("farbod");
-        users.setUserpass("123");
-        userService.register(users);
-        Roles roles=new Roles();
-        roles.setRoleName("admin");
-        roles.setUsername("farbod");
-        userService.roleReg(roles);
-        System.out.println("admin registered!!!!!!!!!!");
-        return "adminLogin";
-    }
-
-    @RequestMapping(value = "/adminLogin")
-    public String adminLogin(@RequestBody String str,HttpServletRequest request) throws ServletException{
-
-
-        Gson gson=new Gson();
-        Users users=gson.fromJson(str,Users.class);
-        String adminUsername=users.getUsername();
-        String adminPass=users.getUserpass();
-        try {
-            request.login(adminUsername,adminPass);
-            return "redirect://localhost:3000/admin";
-        }catch (Exception e){
-            return "redirect://localhost:3000/error";
-        }
+        userService.register(users);// write to PSQL
+        userService.roleReg(roles); //
+        response.sendRedirect("//localhost:3000/Login");
+        // MVC  = model (TO + repo + JPA ) + view (React) + Controller(Servlet)   tomcat ba servlet ertebat darad info migire
+        // JPA is a standard to communicate with hibernate
     }
 
 
-    @RequestMapping(value = "/userLogin")
-    public String userLogin(@RequestBody String str, HttpServletRequest request)throws ServletException,IOException{
-        Gson gson=new Gson();
-        Users users=gson.fromJson(str,Users.class);
-        String username=users.getUsername();
-        String password=users.getUserpass();
+    @RequestMapping(value = "/userLogin")// Determine the address of the servlet (Action form) // we send in request form not Gison
+    public void userLogin( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException {// create two object from HttpSelv...
 
-        try {
-            request.login(username,password);
-            return "redirect://localhost:3000/user";
-        }catch (Exception e){
-            return "redirect://localhost:3000/error";
-        }
+        String username = request.getParameter("username");//get request parameter from front
+        String password = request.getParameter("userpass");
+        System.out.println("username:" + username);
+        System.out.println("password:" + password);
 
+        /*request.login(username, password); // realm ask from database
+        System.out.println("getRemoteUser?.." + request.getRemoteUser());
+        System.out.println("getUserPrincipal?.." + request.getUserPrincipal());
+        System.out.println("getAuthType?.." + request.getAuthType());*/
 
+            try { // true
+                request.login(username,password); // realm ask from database
+                GenericPrincipal genericPrincipal= (GenericPrincipal) request.getUserPrincipal();//get user role from generic principal
+                String role=genericPrincipal.getRoles()[0];
+                System.out.println("role"+role);
+                response.sendRedirect("//localhost:3000/"+role);
+            }
+            catch (Exception e){
+                response.setStatus(403);//set forbidden(403) status in response
+            }
     }
-
-
-    @RequestMapping(value = "/logout")
+    @RequestMapping(value = "/logout") // Action Form
     public String logout(HttpServletRequest request) throws ServletException{
 
         request.logout();
-        return "login";
+        return "Login";
 
     }
 
 }
+
+
+
