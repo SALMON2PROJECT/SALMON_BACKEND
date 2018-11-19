@@ -28,9 +28,9 @@ Do the CORAS setting for web.xml for apache tomcat.
 
 ## Table of contents
 <!--ts-->
-   * [SALMON BACKEND CONTROLLER ](#Salmon)
-        * [1.1 Dispatcher servlet](#Dispatcher servlet)
-        * [1.2 Controllers: ](Controllers: )
+   * [1.SALMON BACKEND CONTROLLER ](#Salmon)
+        * [Dispatcher servlet](#Dispatcher servlet)
+        * [Controllers: ](#Controllers)
         * [1.3.Databas](#3.Databas)
         * [1.3.Architector](#Architector)
    * [How to run backend](#How to run)
