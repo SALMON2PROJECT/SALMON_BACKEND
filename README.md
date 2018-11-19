@@ -1,41 +1,40 @@
 # SALMON BACKEND CONTROLLER 
 
-###1.Components
+### Components
 
-SALMON backend controller is in java language and apply Spring mvc frameork that consist of 3 main commponent 
-#### 1.1 Dispatcher servlet
+SALMON backend controller is in java language and applies Spring MVC framework that consists of 3 main components 
+#### Dispatcher servlet
 - 1.1.1 Tomcat (web-container)
 - 1.2.1 Apache (web-Server)
 
-#### 1.2 Controllers: 
+#### Controllers: 
 
 xxxxxxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxx x xxx 
 
-#### 1.3.Databas:
+#### Database:
 
-PostgreSQL is the reational database that we use in this APPLICATION.
+PostgreSQL is the relational database that we use in this APPLICATION.
 Servlet controller Tomcat
-#### 1.4 Architector
+#### Architector
 
 ![images](https://user-images.githubusercontent.com/17232450/47887521-208a2e00-de40-11e8-9883-5ae6b589280d.png)
-##  How to run ? 
-make sure that you put libraies in the proper folder.
-run tomcat via your IDE 
+##  How to run? Make sure that you put libraries in the proper folder.
+Run tomcat via your IDE 
 run PostgreSQL on 5432 port.
-do the CORAS setting for web.xml for appache tomcat. 
+Do the CORAS setting for web.xml for apache tomcat. 
 
 
 
 ##Table of contents
 <!--ts-->
    * [1 SALMON BACKEND CONTROLLER](#SALMON BACKEND CONTROLLER )
-        * [1.1 Dispatcher servlet](#1 Dispatcher servlet)
-        * [1.2 Controllers: ](2.Controllers: )
+        * [1.1 Dispatcher servlet](#Dispatcher servlet)
+        * [1.2 Controllers: ](Controllers: )
         * [1.3.Databas](#3.Databas)
         * [1.3.Architector](#Architector)
    * [2. How to run backend ](#How to run)
         * [2.1 Setup and requirements](#Setup and requirements)
-             * [Current JDK](#Current JDK)
+          * [Current JDK](#Current JDK)
              * [Tools](#Tools)
              * [PostgreSQL](#remote-files)
              * [Multiple files](#multiple-files)
@@ -52,7 +51,7 @@ do the CORAS setting for web.xml for appache tomcat.
 
 #### Current JDK
 
-find the current version according to your operation system JDK
+find the current version according to your operating system JDK
 
 #### Tools 
 
@@ -67,11 +66,11 @@ find the current version according to your operation system JDK
 - initialization on [MacOs](https://chartio.com/resources/tutorials/how-to-start-postgresql-server-on-mac-os-x/) 
 - Setting Up PostgreSQL on [MacOs](https://www.tunnelsup.com/setting-up-postgres-on-mac-osx/) 
 
-Start manualy postgrade, you can observe the connections.
+Start manually postgres, you can observe the connections.
 ```
 postgres -D /usr/local/var/postgres
 ```
-Stop manually postgrade
+Stop manually postgres
 ```
 pg_ctl -D /usr/local/var/postgres stop -s -m fast
 ```
@@ -81,13 +80,13 @@ https://github.com/AnalyticsWorkbench/Components/wiki/Bugs-and-errors
 
 Setup connection to Database psql:
 
-please go to project folder and open this file 
+please go to the project folder and open this file 
 WEB-INF/spring-servlet.xml
 ```
 spring-servlet.xml
 
 ```
-find this tag and customise it according to your psql setting
+find this tag and customize it according to your psql setting
 
 ```
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -104,7 +103,7 @@ find this tag and customise it according to your psql setting
    
    PPPPPPPPPP = put your password 
     
-## Install Appache tomcat
+## Install Apache Tomcat
 
 http://tomcat.apache.org/
 
@@ -174,7 +173,7 @@ suggested version:
    
   create user:
   [More info psql ](https://www.postgresql.org/docs/9.0/sql-createdatabase.html)
-    make sure you give the essentional rights to the new user *(super user)
+    make sure you give the essential rights to the new user *(superuser)
   
     $ psql -U testuser testdb 
   
@@ -212,8 +211,8 @@ suggested version:
   
     $ drop database exampleDatabase;
   
-  If says cannot do first then drop;
-  alter database folan is_template false;
+  If it  says cannot do first then drop;
+  alter database Folan is_template false;
   
   ==================================
   
