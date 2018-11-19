@@ -27,14 +27,14 @@ Do the CORAS setting for web.xml for apache tomcat.
 
 ##Table of contents
 <!--ts-->
-   * [SALMON BACKEND CONTROLLER](#SALMON BACKEND CONTROLLER )
+   * [SALMON BACKEND CONTROLLER ](#SALMON BACKEND CONTROLLER)
         * [1.1 Dispatcher servlet](#Dispatcher servlet)
         * [1.2 Controllers: ](Controllers: )
         * [1.3.Databas](#3.Databas)
         * [1.3.Architector](#Architector)
    * [How to run backend](#How to run)
         * [2.1 Setup and requirements](#Setup and requirements)
-          * [Current JDK](#Current JDK)
+             * [Current JDK](#Current JDK)
              * [Tools](#Tools)
              * [PostgreSQL](#remote-files)
              * [Multiple files](#multiple-files)
