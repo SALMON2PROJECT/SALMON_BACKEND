@@ -1,6 +1,6 @@
-# SALMON BACKEND CONTROLLER 
+# Salmon
 
-### Components
+## Components
 
 SALMON backend controller is in java language and applies Spring MVC framework that consists of 3 main components 
 #### Dispatcher servlet
@@ -18,16 +18,17 @@ Servlet controller Tomcat
 #### Architector
 
 ![images](https://user-images.githubusercontent.com/17232450/47887521-208a2e00-de40-11e8-9883-5ae6b589280d.png)
-##  How to run? Make sure that you put libraries in the proper folder.
+##  How to run? 
+Make sure that you put libraries in the proper folder.
 Run tomcat via your IDE 
 run PostgreSQL on 5432 port.
 Do the CORAS setting for web.xml for apache tomcat. 
 
 
 
-##Table of contents
+## Table of contents
 <!--ts-->
-   * [SALMON BACKEND CONTROLLER ](#SALMON BACKEND CONTROLLER)
+   * [SALMON BACKEND CONTROLLER ](#Salmon)
         * [1.1 Dispatcher servlet](#Dispatcher servlet)
         * [1.2 Controllers: ](Controllers: )
         * [1.3.Databas](#3.Databas)
@@ -47,7 +48,7 @@ Do the CORAS setting for web.xml for apache tomcat.
    * [Dependency](#dependency)
 <!--te-->
 
-##Setup and requirements
+## Setup and requirements
 
 #### Current JDK
 
