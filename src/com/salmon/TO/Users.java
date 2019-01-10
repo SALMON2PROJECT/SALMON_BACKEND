@@ -13,7 +13,7 @@ public class Users implements Serializable {
     @Column(name = "ID",columnDefinition = "SMALLINT")
     private long id;
 
-    @Column(name = "USERNAME",columnDefinition = "CHAR(100)")
+    @Column(name = "USERNAME",columnDefinition = "CHAR(100)",unique = true)
     private String username;
 
     @Column(name = "USERPASS",columnDefinition = "CHAR(100)")

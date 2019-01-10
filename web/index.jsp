@@ -1,21 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Aprin
-  Date: 8/30/2018
-  Time: 2:50 PM
+  User: Hp
+  Date: 11/2/2018
+  Time: 9:18 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
- <title>$Title$</title>
-</head>
-<body>
-<form action="/user/UserRegister.do" method="get">
-  <input type="text" name="name"/>
-  <input type="text" name="pass"/>
-  <input type="submit"/>
-</form>
-<a href="adminLogin.jsp">adminLogin</a>
-</body>
+    <title>$Title$</title>
+  </head>
+  <body>
+  <form action="/SalmonController_war_exploded/action/tag.do">
+   <%--<form action="action/tag.do">--%>
+    <input type="text" name="pdfCore" width="400">
+    <%--<input type="text" name="title">--%>
+    <input type="submit" value="getText" >
+  </form>
+  </body>
 </html>

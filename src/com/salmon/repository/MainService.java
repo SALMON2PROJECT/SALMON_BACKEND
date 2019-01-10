@@ -1,4 +1,4 @@
-package com.salmon.repository;
+package com.salmon.Repository;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 @Transactional
 public abstract class MainService<T> {
-@PersistenceContext
+    @PersistenceContext
     EntityManager entityManager;
     public void register(T entity){
 

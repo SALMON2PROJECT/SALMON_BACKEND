@@ -9,18 +9,16 @@
 	http://www.springframework.org/schema/context/spring-context-3.1.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
-
     <!--SpringMVC-->
-    <context:component-scan base-package="com.salmon"/>
+    <context:component-scan base-package="com"/>
     <mvc:annotation-driven/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="//localhost:3000/"/>
-
     </bean>
     <!-- SpringTransaction-->
     <bean id="entityManagerFactoryBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.salmon.TO"/>
+        <property name="packagesToScan" value="com"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
         </property>
@@ -32,17 +30,14 @@
             </props>
         </property>
     </bean>
-
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://127.0.0.1:2525/farbodaprin"/>
-        <property name="username" value="salmon"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5432/salmon"/>
+        <property name="username" value="farbodaprin"/>
         <property name="password" value="12345"/>
     </bean>
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactoryBean"/>
     </bean>
-
     <tx:annotation-driven/>
-
 </beans>

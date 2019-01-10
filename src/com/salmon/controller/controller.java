@@ -3,11 +3,17 @@ package com.salmon.controller;
 
 import com.salmon.TO.Roles;
 import com.salmon.TO.Users;
-import com.salmon.repository.UserService;
+import com.salmon.Repository.UserService;
 import org.apache.catalina.realm.GenericPrincipal;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;// selvlet stage
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,35 +29,49 @@ public class controller {
 
     @RequestMapping(value = "/userRegister") //conect two request together // POST is form from JSON BASE from axios
     public void userReg(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{ //REquest body : get the data from front as string
-
-        /*System.out.println("i am here");
-        System.out.println(string);
-        Gson gson=new Gson();*/
-        String username=request.getParameter("username");
-        String userpass=request.getParameter("userpass");
+        try {
         Users users=new Users();
-        users.setUsername(username);
-        users.setUserpass(userpass);
+        users.setUsername(request.getParameter("username"));
+        users.setUserpass(request.getParameter("userpass"));
         Roles roles=new Roles();// TO folder
         roles.setRoleName("user");
         roles.setUsername(users.getUsername());
         userService.register(users);// write to PSQL
-        userService.roleReg(roles); //
-        response.sendRedirect("//localhost:3000/Login");
+        userService.roleReg(roles);
+            System.out.println("===================");
+            System.out.println("Register successful");
+            System.out.println("===================");
+        response.sendRedirect("//localhost:3000/Annotator");}
+        catch (DataIntegrityViolationException e){
+            System.out.println("duplicate in registeration");
+        response.sendRedirect("//localhost:3000/Annotator");
+        }
         // MVC  = model (TO + repo + JPA ) + view (React) + Controller(Servlet)   tomcat ba servlet ertebat darad info migire
         // JPA is a standard to communicate with hibernate
     }
-
-
+    /**
+     *
+     * @param json
+     * @param request
+     * @param response
+     * @return
+     * @throws ServletException
+     * @throws IOException
+     * ===============================================LOGIN==============================================================
+     */
     @RequestMapping(value = "/userLogin")// Determine the address of the servlet (Action form) // we send in request form not Gison
-    public void userLogin( HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException {// create two object from HttpSelv...
+    @ResponseBody
+    public String userLogin( @RequestBody String json,HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException {// create two object from HttpSelv...
+       try {
+           JSONObject jsonObject=new JSONObject(json.toString());
 
-        String username = request.getParameter("username");//get request parameter from front
-        String password = request.getParameter("userpass");
+        String username = jsonObject.getString("username");//get request parameter from front
+
+        String password = jsonObject.getString("userpass");
         System.out.println("username:" + username);
         System.out.println("password:" + password);
 
-        /*request.login(username, password); // realm ask from database
+        /*request.login(username, password); // realm  ask from database
         System.out.println("getRemoteUser?.." + request.getRemoteUser());
         System.out.println("getUserPrincipal?.." + request.getUserPrincipal());
         System.out.println("getAuthType?.." + request.getAuthType());*/
@@ -61,10 +81,25 @@ public class controller {
                 GenericPrincipal genericPrincipal= (GenericPrincipal) request.getUserPrincipal();//get user role from generic principal
                 String role=genericPrincipal.getRoles()[0];
                 System.out.println("role"+role);
-                response.sendRedirect("//localhost:3000/"+role);
+                JSONObject jsonObject1=new JSONObject();
+                System.out.println("===================");
+                System.out.println("LOGIN successful");
+                System.out.println("===================");
+                jsonObject1.put("userName",username);
+                jsonObject1.put("state",true);
+                String str= jsonObject1.toString();
+                System.out.println(str);
+                return str;
             }
             catch (Exception e){
                 response.setStatus(403);//set forbidden(403) status in response
+                JSONObject jsonObject1=new JSONObject();
+                jsonObject1.put("state",false);
+                String str=jsonObject1.toString();
+                return str;
+            }}catch (JSONException je){
+           System.out.println("json has an exception");
+           return null;
             }
     }
     @RequestMapping(value = "/logout") // Action Form

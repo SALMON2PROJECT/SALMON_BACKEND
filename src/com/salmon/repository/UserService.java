@@ -1,4 +1,4 @@
-package com.salmon.repository;
+package com.salmon.Repository;
 
 import com.salmon.TO.Roles;
 import com.salmon.TO.Users;
