@@ -1,5 +1,6 @@
 package com.salmon.Repository;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,9 +16,16 @@ public abstract class MainService<T> {
     @PersistenceContext
     EntityManager entityManager;
     public void register(T entity){
+        try {
 
-        entityManager.persist(entity);
 
+            entityManager.persist(entity);
+
+        }
+        catch (DataIntegrityViolationException e){
+
+            System.out.println("Registration has an Exception");
+        }
     }
     public void remove(T entity){
 
@@ -27,8 +35,10 @@ public abstract class MainService<T> {
     public List<T> getAll(Class<T> aclass){
 
         try {
-            List tList=entityManager.createQuery("select entity from"+aclass.newInstance().getClass().getAnnotation(Entity.class).name()+"entity")
+
+            List tList=entityManager.createQuery("select entity from " +aclass.newInstance().getClass().getAnnotation(Entity.class).name() +" entity")
                     .getResultList();
+
             return tList;
         }catch (Exception e){
             e.printStackTrace();
@@ -36,12 +46,13 @@ public abstract class MainService<T> {
         }
 
     }
-    public T find(Class<T> aclass,long id){
-        return entityManager.find(aclass,id);
+    public T find(Class<T> aclass,String string){
+        return entityManager.find(aclass,string);
     }
     public void update(T entity){
         entityManager.merge(entity);
     }
+
 }
 
 

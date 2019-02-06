@@ -279,6 +279,8 @@ Tutorials
 
 open your local tomcat folder => conf => web.xml file and add this filter to the xml file 
 
+https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html
+
 
   ``` 
     <filter>

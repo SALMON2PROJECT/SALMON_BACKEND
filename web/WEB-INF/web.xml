@@ -5,7 +5,9 @@
          version="3.1">
     <login-config>
         <auth-method>FORM</auth-method>
+
         <form-login-config>
+
             <form-login-page>//localhost:3000/Login</form-login-page>
             <form-error-page>//localhost:3000/error</form-error-page>
         </form-login-config>
@@ -23,6 +25,7 @@
     <!--Security Constraint-->
     <security-constraint>
         <web-resource-collection>
+
             <web-resource-name>adminRealm</web-resource-name>
             <url-pattern>//localhost:3000/admin</url-pattern>
         </web-resource-collection>

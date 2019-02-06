@@ -30,6 +30,8 @@ public class controller {
     @RequestMapping(value = "/userRegister") //conect two request together // POST is form from JSON BASE from axios
     public void userReg(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{ //REquest body : get the data from front as string
         try {
+
+
         Users users=new Users();
         users.setUsername(request.getParameter("username"));
         users.setUserpass(request.getParameter("userpass"));
@@ -38,13 +40,10 @@ public class controller {
         roles.setUsername(users.getUsername());
         userService.register(users);// write to PSQL
         userService.roleReg(roles);
-            System.out.println("===================");
-            System.out.println("Register successful");
-            System.out.println("===================");
-        response.sendRedirect("//localhost:3000/Annotator");}
+        response.sendRedirect("//localhost:3000/Login");}
         catch (DataIntegrityViolationException e){
             System.out.println("duplicate in registeration");
-        response.sendRedirect("//localhost:3000/Annotator");
+        response.sendRedirect("//localhost:3000/register");
         }
         // MVC  = model (TO + repo + JPA ) + view (React) + Controller(Servlet)   tomcat ba servlet ertebat darad info migire
         // JPA is a standard to communicate with hibernate
@@ -80,6 +79,7 @@ public class controller {
                 request.login(username,password); // realm ask from database
                 GenericPrincipal genericPrincipal= (GenericPrincipal) request.getUserPrincipal();//get user role from generic principal
                 String role=genericPrincipal.getRoles()[0];
+
                 System.out.println("role"+role);
                 JSONObject jsonObject1=new JSONObject();
                 System.out.println("===================");
@@ -87,8 +87,7 @@ public class controller {
                 System.out.println("===================");
                 jsonObject1.put("userName",username);
                 jsonObject1.put("state",true);
-                String str= jsonObject1.toString();
-                System.out.println(str);
+               String str= jsonObject1.toString();
                 return str;
             }
             catch (Exception e){
@@ -100,7 +99,7 @@ public class controller {
             }}catch (JSONException je){
            System.out.println("json has an exception");
            return null;
-            }
+       }
     }
     @RequestMapping(value = "/logout") // Action Form
     public String logout(HttpServletRequest request) throws ServletException{

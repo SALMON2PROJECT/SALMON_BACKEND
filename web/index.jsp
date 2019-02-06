@@ -15,6 +15,7 @@
    <%--<form action="action/tag.do">--%>
     <input type="text" name="pdfCore" width="400">
     <%--<input type="text" name="title">--%>
+       <p>SALMON BACKEND</p>
     <input type="submit" value="getText" >
   </form>
   </body>
