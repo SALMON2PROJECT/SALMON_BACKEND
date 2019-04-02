@@ -274,6 +274,30 @@ Tutorials
     $  select * from users where id=1;
   
   
+  to keep the data in database:
+  remove drop then second time remove create because double creation cause error in hibernate.
+   
+  To change the setting go to spring-servlet.xml and change this line :
+  ``` 
+   <prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+  ```
+  if you want to drop all tables type this command in the teriminal:
+   ```  
+  DROP TABLE ant,metadatacollection,otherdata,pdfcore,pdfcorecollection,roles,users;
+   ``` 
+  ``` 
+                    List of relations
+    Schema |        Name        | Type  |    Owner    
+   --------+--------------------+-------+-------------
+    public | ant                | table | farbodaprin
+    public | metadatacollection | table | farbodaprin
+    public | otherdata          | table | farbodaprin
+    public | pdfcore            | table | farbodaprin
+    public | pdfcorecollection  | table | farbodaprin
+    public | roles              | table | farbodaprin
+    public | users              | table | farbodaprin
+   ``` 
+  
 ## CORAS BROWSER SETTING ON SERVLET 
 ---------------------------------------------------------------------------------------------------
 
@@ -308,5 +332,18 @@ https://tomcat.apache.org/tomcat-7.0-doc/config/filter.html
            <url-pattern>/*</url-pattern>
        </filter-mapping>
   ``` 
+  #### Check dependency
+
+after cloning the project open SALMON project with your IDE and check the SalmonController.iml
+check your current tomcat version from here:
+
+![screenshot 2018-12-16 00 25 19](https://user-images.githubusercontent.com/17232450/50048315-26269500-00c9-11e9-9cf4-784cd219d88b.png)
+
+replace your version with:
+
+![screenshot 2018-12-16 00 23 21](https://user-images.githubusercontent.com/17232450/50048346-d0062180-00c9-11e9-95af-4d9119e52b09.png)
+
+
+
 
 

@@ -1,4 +1,4 @@
-package com.salmon.Repository;
+package com.salmon.Services;
 
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -41,7 +41,7 @@ public abstract class MainService<T> {
 
             return tList;
         }catch (Exception e){
-            e.printStackTrace();
+
             return null;
         }
 
