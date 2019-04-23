@@ -89,6 +89,8 @@ open this gitHub repo
 #### Current JDK
 
 find the current version according to your operating system JDK
+[![SALMON](https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html)
+
 
 #### Tools 
 
@@ -209,7 +211,7 @@ suggested version:
  ### Add spring libs to the WEB-INF folder 
   
 ---------------------------------------------------------------------------------------------------
-  please go to the JAVA libs github for salmon and download SpringLibs from [javalibs-Githhub](https://github.com/SALMON2PROJECT/Java-Libraries/tree/master/tomcatSpringLib/lib%20Spring)
+ please go to the JAVA libs github for salmon and download SpringLibs from [javalibs-Githhub](https://github.com/SALMON2PROJECT/Java-Libraries/tree/master/tomcatSpringLib/lib%20Spring)
 
   add them to the WEB-INF folder as blow:
   
