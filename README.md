@@ -2,15 +2,25 @@
 
 We present SALMON, a collab-rating web-based annotation system, which dynamically links and recommends learning resources based on annotations. It facilitates methods of semantic analysis to automatically extract relevant content from lecture materials in the form of PDF web documents. SALMON categorizes documents automatically in a way that finding similar resources becomes faster for the learners, and they can discover communities for exciting topics. We evaluated the categorization of learning materials for our application with a gold standard library created from “Arxiv.org” testing two methods cosine similarity algorithm and greedy string tiling. Results indicate that cosine similarity is a useful method to approximate the similarity between learning materials.
 
-![Screenshot 2019-07-10 at 11 11 39](https://user-images.githubusercontent.com/17232450/60956672-8f8b2100-a303-11e9-9b1b-734f2d5340be.png)
-![Screenshot 2019-07-10 at 11 11 48](https://user-images.githubusercontent.com/17232450/60956678-91ed7b00-a303-11e9-839a-9c173c6a0e61.png)
+<img src="https://user-images.githubusercontent.com/17232450/60957793-8d29c680-a305-11e9-9a02-59a5b63c9425.png" width= "330px">
+Fig.1.  Anootaion in SALMON
+
+<img src="https://user-images.githubusercontent.com/17232450/60957794-8d29c680-a305-11e9-926f-86a7ac7b9cf5.png" width= "630px">
+Fig.2.  Anootaion UI
+
+<img src="https://user-images.githubusercontent.com/17232450/60956672-8f8b2100-a303-11e9-9b1b-734f2d5340be.png" width= "830px">
+
+<img src="https://user-images.githubusercontent.com/17232450/60956678-91ed7b00-a303-11e9-839a-9c173c6a0e61.png" width= "830px">
+Fig.3. SALMON Architecture
+
 
 ## 1.Backend and Components
 
 SALMON backend controller is in java language and applies Spring MVC framework that consists of 3 main components 
 Model-View-Controller (MVC) is a pattern used in software engineering to separate the application logic from the user interface. As the name implies, the MVC pattern has three layers.
-## 1.1 Architecture
+## 1.1 Backend Architecture
 
+<img src="https://user-images.githubusercontent.com/17232450/60957795-8d29c680-a305-11e9-8cd8-ee1d7895e931.png" width= "730px">
 ![images](https://user-images.githubusercontent.com/17232450/47887521-208a2e00-de40-11e8-9883-5ae6b589280d.png)
 
 
@@ -375,7 +385,6 @@ https://drive.google.com/file/d/19iXPDlLDwAJz5W009vbvARVojw3g4Us4/view?usp=shari
 
 Clickable PDF for bibliographies : 
 http://185.53.143.115:8090/Bibliography%20for%20SALMON.pdf
-
 
 
 
