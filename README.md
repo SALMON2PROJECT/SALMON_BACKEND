@@ -1,10 +1,61 @@
-# SALMON BACKEND CONTROLLER 
+# SALMON APPLICATION LITURTURE AND BACKEND CONTROLLER 
 
-## 1.Components
+Over the last ten years, as digitalization has been increasingly becom-
+ing a key factor in educational systems, PDF format has become one of the es-
+sential document formats for lecture materials. With consideration of the increas-
+ing availability of tablets and portable devices for students, web-based and shared
+annotations of such learning materials are becoming more popular. Annotating
+learning material is a method to promote engagement, understanding, and inde-
+pendence for all learners in a shared environment. Open educational resources
+have the potential to add valuable information and close the gap between learning
+materials by automatically linking them. However, current popular web annota-
+tion tools for learners, such as Hypothesis and Kami, do not support learners in
+discovering new learning resources based on the context, the metadata and the
+content of the annotated resource. In this article, we present SALMON, a collab-
+orative web-based annotation system, which dynamically links and recommends
+learning resources based on annotations. It facilitates methods of semantic anal-
+ysis in order to automatically extract relevant content from lecture materials in
+the form of PDF web documents. SALMON categorizes documents automati-
+cally in a way that finding similar resources becomes faster for the learners, and
+they can discover communities for interesting topics. We evaluated the categori-
+zation of learning materials for our application with a gold standard library cre-
+ated from “Arxiv.org” testing two methods cosine similarity algorithm and
+greedy string tiling. Results indicate that cosine similarity is a useful method to
+approximate the similarity between learning materials.
+Keywords: Web-annotation in education, collaboration system, online PDF an- notator tool, Open educational resources, Recommender System, Anonymous participation, Semantic Analysis, Semantic Web-based educational systems
+
+Here are some additional links for Salmon application features: 
+
+
+The full presentation of Salmon with entities: 
+
+https://youtu.be/lx0zWMFNiNo (1 Hour))
+
+Quickly test Salmon - Annotation - Unification - Recommendation
+https://youtu.be/vRT1AKbf7hs
+Collections layout - test the collector agent with standard digital libraries  in Salmon (9 min) 
+https://youtu.be/ltprsfvVOjQ
+
+How to setup Salmon 
+
+https://youtu.be/rho76jfKJ0k  (Salmon Backend Setup.  1  (8 min))
+https://youtu.be/mJZ35V3qzAM  (Salmon Backend Setup.  2  (5 min))
+https://youtu.be/wy9VvvpzOsc  (Salmon Backend Setup.  3  (3 min))
+
+Files:
+
+SALMON in PDF format:
+http://185.53.143.115:8090/SALMONFarbodAprin3039071.pdf
+https://drive.google.com/file/d/19iXPDlLDwAJz5W009vbvARVojw3g4Us4/view?usp=sharing
+
+Clickable PDF for bibliographies : 
+http://185.53.143.115:8090/Bibliography%20for%20SALMON.pdf
+
+## 1.Backend and Components
 
 SALMON backend controller is in java language and applies Spring MVC framework that consists of 3 main components 
 Model-View-Controller (MVC) is a pattern used in software engineering to separate the application logic from the user interface. As the name implies, the MVC pattern has three layers.
-## 1.1 Architector
+## 1.1 Architecture
 
 ![images](https://user-images.githubusercontent.com/17232450/47887521-208a2e00-de40-11e8-9883-5ae6b589280d.png)
 
