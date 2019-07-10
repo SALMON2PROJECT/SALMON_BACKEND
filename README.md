@@ -1,55 +1,9 @@
-# SALMON APPLICATION LITURTURE AND BACKEND CONTROLLER 
+# SALMON Application Liturchare and Backend Controller 
 
-Over the last ten years, as digitalization has been increasingly becom-
-ing a key factor in educational systems, PDF format has become one of the es-
-sential document formats for lecture materials. With consideration of the increas-
-ing availability of tablets and portable devices for students, web-based and shared
-annotations of such learning materials are becoming more popular. Annotating
-learning material is a method to promote engagement, understanding, and inde-
-pendence for all learners in a shared environment. Open educational resources
-have the potential to add valuable information and close the gap between learning
-materials by automatically linking them. However, current popular web annota-
-tion tools for learners, such as Hypothesis and Kami, do not support learners in
-discovering new learning resources based on the context, the metadata and the
-content of the annotated resource. In this article, we present SALMON, a collab-
-orative web-based annotation system, which dynamically links and recommends
-learning resources based on annotations. It facilitates methods of semantic anal-
-ysis in order to automatically extract relevant content from lecture materials in
-the form of PDF web documents. SALMON categorizes documents automati-
-cally in a way that finding similar resources becomes faster for the learners, and
-they can discover communities for interesting topics. We evaluated the categori-
-zation of learning materials for our application with a gold standard library cre-
-ated from “Arxiv.org” testing two methods cosine similarity algorithm and
-greedy string tiling. Results indicate that cosine similarity is a useful method to
-approximate the similarity between learning materials.
-Keywords: Web-annotation in education, collaboration system, online PDF an- notator tool, Open educational resources, Recommender System, Anonymous participation, Semantic Analysis, Semantic Web-based educational systems
+We present SALMON, a collab-rating web-based annotation system, which dynamically links and recommends learning resources based on annotations. It facilitates methods of semantic analysis to automatically extract relevant content from lecture materials in the form of PDF web documents. SALMON categorizes documents automatically in a way that finding similar resources becomes faster for the learners, and they can discover communities for exciting topics. We evaluated the categorization of learning materials for our application with a gold standard library created from “Arxiv.org” testing two methods cosine similarity algorithm and greedy string tiling. Results indicate that cosine similarity is a useful method to approximate the similarity between learning materials.
 
-Here are some additional links for Salmon application features: 
-
-
-The full presentation of Salmon with entities: 
-
-https://youtu.be/lx0zWMFNiNo (1 Hour))
-
-Quickly test Salmon - Annotation - Unification - Recommendation
-https://youtu.be/vRT1AKbf7hs
-Collections layout - test the collector agent with standard digital libraries  in Salmon (9 min) 
-https://youtu.be/ltprsfvVOjQ
-
-How to setup Salmon 
-
-https://youtu.be/rho76jfKJ0k  (Salmon Backend Setup.  1  (8 min))
-https://youtu.be/mJZ35V3qzAM  (Salmon Backend Setup.  2  (5 min))
-https://youtu.be/wy9VvvpzOsc  (Salmon Backend Setup.  3  (3 min))
-
-Files:
-
-SALMON in PDF format:
-http://185.53.143.115:8090/SALMONFarbodAprin3039071.pdf
-https://drive.google.com/file/d/19iXPDlLDwAJz5W009vbvARVojw3g4Us4/view?usp=sharing
-
-Clickable PDF for bibliographies : 
-http://185.53.143.115:8090/Bibliography%20for%20SALMON.pdf
+![Screenshot 2019-07-10 at 11 11 39](https://user-images.githubusercontent.com/17232450/60956672-8f8b2100-a303-11e9-9b1b-734f2d5340be.png)
+![Screenshot 2019-07-10 at 11 11 48](https://user-images.githubusercontent.com/17232450/60956678-91ed7b00-a303-11e9-839a-9c173c6a0e61.png)
 
 ## 1.Backend and Components
 
@@ -395,6 +349,32 @@ check your current tomcat version from here:
 replace your version with:
 
 ![screenshot 2018-12-16 00 23 21](https://user-images.githubusercontent.com/17232450/50048346-d0062180-00c9-11e9-95af-4d9119e52b09.png)
+
+Here are some additional links for Salmon application features: 
+
+The full presentation of Salmon with entities: 
+
+https://youtu.be/lx0zWMFNiNo (1 Hour))
+
+Quickly test Salmon - Annotation - Unification - Recommendation
+https://youtu.be/vRT1AKbf7hs
+Collections layout - test the collector agent with standard digital libraries  in Salmon (9 min) 
+https://youtu.be/ltprsfvVOjQ
+
+How to setup Salmon 
+
+https://youtu.be/rho76jfKJ0k  (Salmon Backend Setup.  1  (8 min))
+https://youtu.be/mJZ35V3qzAM  (Salmon Backend Setup.  2  (5 min))
+https://youtu.be/wy9VvvpzOsc  (Salmon Backend Setup.  3  (3 min))
+
+Files:
+
+SALMON in PDF format:
+http://185.53.143.115:8090/SALMONFarbodAprin3039071.pdf
+https://drive.google.com/file/d/19iXPDlLDwAJz5W009vbvARVojw3g4Us4/view?usp=sharing
+
+Clickable PDF for bibliographies : 
+http://185.53.143.115:8090/Bibliography%20for%20SALMON.pdf
 
 
 
