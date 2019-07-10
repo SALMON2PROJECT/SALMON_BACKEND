@@ -3,10 +3,11 @@
 We present SALMON, a collab-rating web-based annotation system, which dynamically links and recommends learning resources based on annotations. It facilitates methods of semantic analysis to automatically extract relevant content from lecture materials in the form of PDF web documents. SALMON categorizes documents automatically in a way that finding similar resources becomes faster for the learners, and they can discover communities for exciting topics. We evaluated the categorization of learning materials for our application with a gold standard library created from “Arxiv.org” testing two methods cosine similarity algorithm and greedy string tiling. Results indicate that cosine similarity is a useful method to approximate the similarity between learning materials.
 
 <img src="https://user-images.githubusercontent.com/17232450/60957793-8d29c680-a305-11e9-9a02-59a5b63c9425.png" width= "330px">
-Fig.1.  Anootaion in SALMON
+                                                 Fig.1.  Anootaion in SALMON
+
 
 <img src="https://user-images.githubusercontent.com/17232450/60957794-8d29c680-a305-11e9-926f-86a7ac7b9cf5.png" width= "630px">
-Fig.2.  Anootaion UI
+                                                 Fig.2.  Anootaion UI
 
 <img src="https://user-images.githubusercontent.com/17232450/60956672-8f8b2100-a303-11e9-9b1b-734f2d5340be.png" width= "830px">
 
@@ -14,7 +15,7 @@ Fig.2.  Anootaion UI
 Fig.3. SALMON Architecture
 
 
-## 1.Backend and Components
+# 1.Backend and Components
 
 SALMON backend controller is in java language and applies Spring MVC framework that consists of 3 main components 
 Model-View-Controller (MVC) is a pattern used in software engineering to separate the application logic from the user interface. As the name implies, the MVC pattern has three layers.
